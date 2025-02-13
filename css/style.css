@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Berlin Sans FB', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-image: url('../images/background-light.jpg');
+    transition: background 0.5s ease;
+}
+
+header {
+    background-color: #ff5e5e;
+    padding: 20px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 20px;
+}
+
+a.menu-btn {
+    text-decoration: none;
+    color: white;
+    font-size: 20px;
+    padding: 10px 20px;
+    background-color: #ff2a2a;
+    border-radius: 5px;
+    transition: background-color 0.3s, filter 0.3s;
+}
+
+a.menu-btn:hover {
+    background-color: #ff80b3;
+    filter: brightness(0.5);
+}
+
+/* Додано окремо для кнопки "Завантажити", щоб вона змінювала фон */
+a#download-btn:hover {
+    background-color: #ff80b3;
+    filter: brightness(0.5);
+}
+
+/* Інші кнопки не змінюють фон при наведенні */
+a.menu-btn:not(#download-btn):hover {
+    background-color: initial;
+    filter: none;
+}
+
+.content {
+    text-align: center;
+    margin-top: 120px; /* Містить відступ для зафіксованого меню */
+    font-size: 18px;
+}
+
+.text-block {
+    background-color: rgba(255, 94, 94, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    max-width: 900px;
+    justify-content: flex-start;
+}
+
+.info-section {
+    margin: 30px;
+    padding: 20px;
+    background-color: rgba(255, 94, 94, 0.5);
+    border-radius: 10px;
+    color: white;
+
+}
+
+.hidden {
+    display: none;
+}
+
+
+body.night .text-block {
+    background-color: rgba(26, 26, 26, 0.7);
+}
+
+body.night {
+    background-color: #1a1a1a;
+    color: #a93939;
+    background-image: url('../images/background-dark.jpg');
+}
+
+#menu {
+    display: flex;
+}
+
+@media (max-width: 768px) {
+    #menu {
+        display: none;
+        width: 100%;
+        text-align: center;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        background-color: #ff5e5e;
+    }
+
+    #menu li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin: 5px auto;
+        background-color: white;
+        transition: all 0.3s;
+    }
+
+    .menu-toggle.active + #menu {
+        display: block;
+    }
+}
