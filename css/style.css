@@ -51,13 +51,11 @@ a.menu-btn:hover {
     filter: brightness(0.5);
 }
 
-/* Додано окремо для кнопки "Завантажити", щоб вона змінювала фон */
 a#download-btn:hover {
     background-color: #ff80b3;
     filter: brightness(0.5);
 }
 
-/* Інші кнопки не змінюють фон при наведенні */
 a.menu-btn:not(#download-btn):hover {
     background-color: initial;
     filter: none;
@@ -65,7 +63,7 @@ a.menu-btn:not(#download-btn):hover {
 
 .content {
     text-align: center;
-    margin-top: 120px; /* Містить відступ для зафіксованого меню */
+    margin-top: 120px;
     font-size: 18px;
 }
 
