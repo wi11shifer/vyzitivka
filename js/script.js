@@ -1,4 +1,3 @@
-// Отримуємо елементи кнопок і секцій
 const aboutBtn = document.getElementById('about-btn');
 const featuresBtn = document.getElementById('features-btn');
 const reviewsBtn = document.getElementById('reviews-btn');
@@ -7,28 +6,33 @@ const aboutSection = document.getElementById('about');
 const featuresSection = document.getElementById('features');
 const reviewsSection = document.getElementById('reviews');
 
-// Додаємо обробники подій для кнопок
 aboutBtn.addEventListener('click', () => {
-    aboutSection.classList.toggle('hidden'); // Показуємо/ховаємо секцію
+    aboutSection.classList.toggle('hidden');
 });
 
 featuresBtn.addEventListener('click', () => {
-    featuresSection.classList.toggle('hidden'); // Показуємо/ховаємо секцію
+    featuresSection.classList.toggle('hidden');
 });
 
 reviewsBtn.addEventListener('click', () => {
-    reviewsSection.classList.toggle('hidden'); // Показуємо/ховаємо секцію
+    reviewsSection.classList.toggle('hidden');
 });
 
-// Для кнопки "Завантажити"
 const downloadBtn = document.getElementById('download-btn');
 const survivalGoal = document.getElementById('survival-goal');
 
 downloadBtn.addEventListener('click', () => {
-    document.body.classList.add('night'); // Змінюємо тему
-    survivalGoal.style.display = 'block'; // Показуємо повідомлення
+    document.body.classList.add('night');
+    survivalGoal.style.display = 'block';
     setTimeout(() => {
-        document.body.classList.remove('night'); // Відновлюємо колір
-        survivalGoal.style.display = 'none'; // Ховаємо повідомлення через 3 секунди
+        document.body.classList.remove('night');
+        survivalGoal.style.display = 'none';
     }, 3000);
+});
+
+const menuToggle = document.getElementById('menu-toggle');
+menuToggle.addEventListener('click', () => {
+    menuToggle.classList.toggle('active');
+    const menu = document.getElementById('menu');
+    menu.classList.toggle('active');
 });
